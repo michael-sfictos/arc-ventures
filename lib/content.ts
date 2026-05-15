@@ -130,6 +130,48 @@ export const portfolioCompanies = [
   },
 ];
 
+/** Partner / associate roster on the Team page (replace placeholders when finalized). */
+export type PartnerAssociateProfile = {
+  name: string;
+  tier: "Partner" | "Associate";
+  bio: string;
+  /** Portrait path under `public/` (e.g. `/team/surname.jpg`). Omit until the asset exists. */
+  photoSrc?: string;
+};
+
+export const partnersAndAssociates: PartnerAssociateProfile[] = [
+  {
+    name: "Partner name (placeholder)",
+    tier: "Partner",
+    bio: "Short bio placeholder — prior investing or operating roles, sector focus, and how they support founders in physical-world markets.",
+  },
+  {
+    name: "Partner name (placeholder)",
+    tier: "Partner",
+    bio: "Short bio placeholder — deal sourcing, portfolio support, and domain networks across energy, health, or the built environment.",
+  },
+  {
+    name: "Associate name (placeholder)",
+    tier: "Associate",
+    bio: "Short bio placeholder — diligence, market maps, and founder outreach aligned with ARC's thesis.",
+  },
+  {
+    name: "Associate name (placeholder)",
+    tier: "Associate",
+    bio: "Short bio placeholder — portfolio ops support, metrics tracking, and internal tooling.",
+  },
+  {
+    name: "Associate name (placeholder)",
+    tier: "Associate",
+    bio: "Short bio placeholder — sector research and technical scouting for automation-led startups.",
+  },
+  {
+    name: "Associate name (placeholder)",
+    tier: "Associate",
+    bio: "Short bio placeholder — LP communications, events, and partner coordination.",
+  },
+];
+
 export const teamMembers = [
   {
     name: "Founding Partner",

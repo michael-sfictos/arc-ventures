@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ArcCard } from "@/components/arc-card";
 import { PageHero } from "@/components/page-hero";
 import { SectionShell } from "@/components/section-shell";
-import { teamMembers } from "@/lib/content";
+import { partnersAndAssociates, teamMembers } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Team",
@@ -24,6 +25,48 @@ export default function TeamPage() {
           </p>
         </ArcCard>
       </PageHero>
+
+      <SectionShell
+        eyebrow="Partners & associates"
+        title="Investment team structure."
+        intro="Partners lead sourcing and commitments; associates support diligence, portfolio operations, and founder workflows."
+      >
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+          {partnersAndAssociates.map((person, index) => (
+            <ArcCard key={`partner-associate-${index}`} tone="outline">
+              <div className="flex h-full flex-col gap-4">
+                <div className="relative aspect-square w-full overflow-hidden rounded-sm bg-white/[0.05] ring-1 ring-inset ring-white/10">
+                  {person.photoSrc ? (
+                    <Image
+                      src={person.photoSrc}
+                      alt={`Portrait of ${person.name}`}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                      className="object-cover"
+                    />
+                  ) : (
+                    <div
+                      aria-hidden
+                      className="grid-frame flex h-full items-center justify-center"
+                    >
+                      <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/38">
+                        Photo placeholder
+                      </span>
+                    </div>
+                  )}
+                </div>
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <h3 className="text-lg font-semibold tracking-[0px] text-primary">{person.name}</h3>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-secondary">
+                    {person.tier}
+                  </span>
+                </div>
+                <p className="text-sm leading-6 text-white/66">{person.bio}</p>
+              </div>
+            </ArcCard>
+          ))}
+        </div>
+      </SectionShell>
 
       <SectionShell
         eyebrow="People"
