@@ -130,45 +130,35 @@ export const portfolioCompanies = [
   },
 ];
 
-/** Partner / associate roster on the Team page (replace placeholders when finalized). */
+/** Partner / associate roster on the Team page. */
 export type PartnerAssociateProfile = {
   name: string;
-  tier: "Partner" | "Associate";
+  role: string;
   bio: string;
+  linkedinUrl?: string;
   /** Portrait path under `public/` (e.g. `/team/surname.jpg`). Omit until the asset exists. */
   photoSrc?: string;
 };
 
 export const partnersAndAssociates: PartnerAssociateProfile[] = [
   {
-    name: "Partner name (placeholder)",
-    tier: "Partner",
-    bio: "Short bio placeholder — prior investing or operating roles, sector focus, and how they support founders in physical-world markets.",
+    name: "Anastasios Papanagiotou",
+    role: "Founder & Managing Shareholder, Faraday Norton",
+    bio: "Founder and managing shareholder at Faraday Norton, with operating and investment experience across energy transition, real estate, renewables, and utility platforms, including WATT+VOLT and ESC Energy Services Company SA.",
+    linkedinUrl: "https://gr.linkedin.com/in/anastasios-papanagiotou-941a5421",
+    photoSrc: "/team/anastasios-papanagiotou.jpg",
   },
   {
-    name: "Partner name (placeholder)",
-    tier: "Partner",
-    bio: "Short bio placeholder — deal sourcing, portfolio support, and domain networks across energy, health, or the built environment.",
+    name: "Ekin Burak O.",
+    role: "Co-Founder, Stealth Startup",
+    bio: "Operator-investor with venture, product, and data experience across LAUNCHub Ventures, Ferto, Blueground, QNB Finansbank, and S&P Capital IQ, spanning startup formation, product strategy, business intelligence, and founder networks.",
+    linkedinUrl: "https://www.linkedin.com/in/ekinburak/",
   },
   {
-    name: "Associate name (placeholder)",
-    tier: "Associate",
-    bio: "Short bio placeholder — diligence, market maps, and founder outreach aligned with ARC's thesis.",
-  },
-  {
-    name: "Associate name (placeholder)",
-    tier: "Associate",
-    bio: "Short bio placeholder — portfolio ops support, metrics tracking, and internal tooling.",
-  },
-  {
-    name: "Associate name (placeholder)",
-    tier: "Associate",
-    bio: "Short bio placeholder — sector research and technical scouting for automation-led startups.",
-  },
-  {
-    name: "Associate name (placeholder)",
-    tier: "Associate",
-    bio: "Short bio placeholder — LP communications, events, and partner coordination.",
+    name: "Nasia Xanthi",
+    role: "Chief Legal Officer & Director, Real Estate Division, Faraday Norton",
+    bio: "Legal and real estate leader at Faraday Norton, with senior counsel experience across banking, energy, telecommunications, government advisory, and property-related transactions.",
+    linkedinUrl: "https://gr.linkedin.com/in/nasia-xanthi-9aa24083",
   },
 ];
 

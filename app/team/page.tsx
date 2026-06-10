@@ -19,9 +19,9 @@ export default function TeamPage() {
         intro="ARC is designed around focused investing, operator context, and a specialist advisor network across energy, health, real estate, and automation."
       >
         <ArcCard tone="orange">
-          <p className="text-xs font-bold uppercase tracking-[0.16em] opacity-70">Editable section</p>
+          <p className="text-xs font-bold uppercase tracking-[0.16em] opacity-70">Team structure</p>
           <p className="mt-5 text-3xl font-semibold tracking-[0px]">
-            Replace these placeholders with partner bios, photos, and advisor credentials when ready.
+            Three profiles combining operating, venture, legal, energy, and real-estate depth.
           </p>
         </ArcCard>
       </PageHero>
@@ -57,11 +57,21 @@ export default function TeamPage() {
                 </div>
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                   <h3 className="text-lg font-semibold tracking-[0px] text-primary">{person.name}</h3>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-secondary">
-                    {person.tier}
-                  </span>
                 </div>
+                <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-secondary">
+                  {person.role}
+                </p>
                 <p className="text-sm leading-6 text-white/66">{person.bio}</p>
+                {person.linkedinUrl ? (
+                  <a
+                    href={person.linkedinUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-auto inline-flex text-xs font-bold uppercase tracking-[0.16em] text-primary transition-colors hover:text-secondary"
+                  >
+                    LinkedIn profile
+                  </a>
+                ) : null}
               </div>
             </ArcCard>
           ))}

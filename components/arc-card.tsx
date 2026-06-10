@@ -10,7 +10,7 @@ const toneClass = {
   dark: "bg-surface text-foreground",
   green: "bg-primary text-[#111111]",
   orange: "bg-secondary text-[#111111]",
-  outline: "bg-white/[0.03] text-foreground",
+  outline: "bg-surface text-foreground",
 };
 
 export function ArcCard({ children, tone = "dark", className = "" }: ArcCardProps) {

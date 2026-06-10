@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArcCard } from "@/components/arc-card";
 import { OrbitalBackground } from "@/components/orbital-background";
+import { PortfolioLogo } from "@/components/portfolio-logo";
 import { SectionShell } from "@/components/section-shell";
 import {
   focusSectors,
@@ -110,8 +111,13 @@ export default function Home() {
         <div className="grid gap-4 md:grid-cols-2">
           {portfolioCompanies.slice(0, 4).map((company) => (
             <ArcCard key={company.name} tone="outline">
-              <p className="eyebrow">{company.sector}</p>
-              <h3 className="mt-5 text-4xl font-semibold tracking-[0px]">{company.name}</h3>
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="eyebrow">{company.sector}</p>
+                  <h3 className="mt-5 text-4xl font-semibold tracking-[0px]">{company.name}</h3>
+                </div>
+                <PortfolioLogo name={company.name} />
+              </div>
               <p className="mt-2 font-mono text-xs uppercase tracking-[0.16em] text-secondary">
                 {company.stage}
               </p>

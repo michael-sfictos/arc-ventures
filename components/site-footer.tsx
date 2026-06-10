@@ -3,7 +3,7 @@ import { navItems, siteConfig } from "@/lib/content";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-white/10 px-4 py-12 sm:px-8">
+    <footer className="px-4 py-12 sm:px-8">
       <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[1.4fr_0.8fr_0.8fr]">
         <div>
           <p className="text-3xl font-semibold tracking-[0px] text-primary">{siteConfig.name}</p>

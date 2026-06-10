@@ -6,6 +6,7 @@ type SectionShellProps = {
   intro?: string;
   children: ReactNode;
   className?: string;
+  withTopBorder?: boolean;
 };
 
 export function SectionShell({
@@ -14,9 +15,12 @@ export function SectionShell({
   intro,
   children,
   className = "",
+  withTopBorder = false,
 }: SectionShellProps) {
+  const borderClassName = withTopBorder ? "border-t border-white/10" : "";
+
   return (
-    <section className={`border-t border-white/10 px-4 py-16 sm:px-8 lg:py-24 ${className}`}>
+    <section className={`${borderClassName} px-4 py-16 sm:px-8 lg:py-24 ${className}`}>
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.6fr]">
         <div>
           {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}

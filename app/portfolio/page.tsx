@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ArcCard } from "@/components/arc-card";
 import { PageHero } from "@/components/page-hero";
+import { PortfolioLogo } from "@/components/portfolio-logo";
 import { portfolioCompanies } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -28,15 +29,18 @@ export default function PortfolioPage() {
         <div className="mx-auto grid max-w-7xl gap-4 md:grid-cols-2">
           {portfolioCompanies.map((company) => (
             <ArcCard key={company.name} tone="outline">
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <p className="eyebrow">{company.sector}</p>
-                <p className="font-mono text-xs uppercase tracking-[0.14em] text-secondary">
-                  {company.stage}
-                </p>
+              <div className="flex items-start justify-between gap-5">
+                <div>
+                  <p className="eyebrow">{company.sector}</p>
+                  <h2 className="mt-8 text-6xl font-semibold tracking-[0px] text-balance">
+                    {company.name}
+                  </h2>
+                </div>
+                <PortfolioLogo name={company.name} />
               </div>
-              <h2 className="mt-8 text-6xl font-semibold tracking-[0px] text-balance">
-                {company.name}
-              </h2>
+              <p className="mt-4 font-mono text-xs uppercase tracking-[0.14em] text-secondary">
+                {company.stage}
+              </p>
               <p className="mt-8 max-w-xl text-sm leading-6 text-white/66">{company.description}</p>
             </ArcCard>
           ))}
