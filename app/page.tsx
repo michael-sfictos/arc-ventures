@@ -26,8 +26,8 @@ export default function Home() {
           <div className="gradient-shell">
             <div className="bg-surface p-6 sm:p-8">
               <p className="text-xl leading-8 text-white/76">
-                {siteConfig.name} backs founders applying AI, robotics, and automation to assets,
-                resources, buildings, energy systems, and human health.
+                {siteConfig.name} backs founders applying AI, robotics, and automation to real estate,
+                energy, and retail, the systems the world runs on.
               </p>
               <p className="mt-5 text-sm leading-6 text-white/58">
                 We are not looking for another SaaS dashboard or marketplace. We invest where
@@ -65,7 +65,7 @@ export default function Home() {
       <SectionShell
         eyebrow="Investment focus"
         title="We back systems, not surfaces."
-        intro="ARC invests in companies where AI and automation improve assets, resources, operations, or measurable human outcomes."
+        intro="ARC invests in companies where AI, automation, and robotics improve assets, resources, operations, or measurable human outcomes."
       >
         <div className="grid gap-4 md:grid-cols-3">
           {focusSectors.map((sector, index) => (

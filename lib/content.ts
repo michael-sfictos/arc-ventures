@@ -33,11 +33,11 @@ export const focusSectors = [
     signals: ["Grid intelligence", "Asset inspection", "Energy automation"],
   },
   {
-    title: "Health & Wellness",
-    kicker: "Human performance and care",
+    title: "Health and Retail",
+    kicker: "Intelligent retail systems",
     description:
-      "Technology that improves physical health outcomes, preventative care, diagnostics, rehabilitation, longevity, and the wellness infrastructure around people.",
-    signals: ["Diagnostics", "Rehabilitation", "Preventative systems"],
+      "Inventory, supply chains, store operations, demand forecasting, customer experience, autonomous fulfillment, and last-mile delivery.",
+    signals: ["Inventory intelligence", "Autonomous operations", "Customer experience"],
   },
   {
     title: "Real Estate",
