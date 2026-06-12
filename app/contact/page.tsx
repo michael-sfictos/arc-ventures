@@ -18,7 +18,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Send the real-world problem."
-        intro="We want to understand the asset, resource, operation, or health outcome you are changing, and why your team has the right technical edge to change it."
+        intro="We want to understand the asset, resource, or operation you are changing, and why your team has the right technical edge to change it."
       >
         <ArcCard tone="green">
           <p className="text-xs font-bold uppercase tracking-[0.16em] opacity-70">Pitch ARC</p>

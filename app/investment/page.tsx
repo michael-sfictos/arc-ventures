@@ -16,7 +16,7 @@ export default function InvestmentPage() {
       <PageHero
         eyebrow="Investment thesis"
         title="AI that moves resources, not slides."
-        intro="We invest in founders building intelligence for assets, machines, buildings, energy, care, and constrained resources. The opportunity is not more software on top of work. It is new operating capacity inside the work."
+        intro="We invest in founders building intelligence for assets, machines, buildings, energy, and constrained resources. The opportunity is not more software on top of work. It is new operating capacity inside the work."
       >
         <ArcCard tone="orange">
           <p className="text-xs font-bold uppercase tracking-[0.16em] opacity-70">Thesis filter</p>
@@ -64,7 +64,7 @@ export default function InvestmentPage() {
       >
         <div className="grid gap-4">
           {investmentModel.map((item) => (
-            <ArcCard key={item.title} tone={item.title === "Seed" ? "green" : "outline"}>
+            <ArcCard key={item.title} tone="outline">
               <div className="grid gap-4 md:grid-cols-[0.7fr_0.8fr_1.3fr] md:items-center">
                 <p className="text-3xl font-semibold tracking-[0px]">{item.title}</p>
                 <p className="font-mono text-sm uppercase tracking-[0.14em]">{item.amount}</p>
@@ -78,7 +78,7 @@ export default function InvestmentPage() {
       <SectionShell
         eyebrow="Founder signal"
         title="When to reach out."
-        intro="The best fit is a technical team with direct access to an urgent operational problem."
+        intro="The best fit is a technical team living inside an urgent, real-world problem."
       >
         <div className="grid gap-4 md:grid-cols-2">
           {founderSignals.map((signal) => (

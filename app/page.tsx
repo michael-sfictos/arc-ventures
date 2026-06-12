@@ -27,10 +27,10 @@ export default function Home() {
             <div className="bg-surface p-6 sm:p-8">
               <p className="text-xl leading-8 text-white/76">
                 {siteConfig.name} backs founders applying AI, robotics, and automation to real estate,
-                energy, and retail, the systems the world runs on.
+                energy and retail, the systems the world runs on.
               </p>
               <p className="mt-5 text-sm leading-6 text-white/58">
-                We are not looking for another SaaS dashboard or marketplace. We invest where
+                We are not looking for another SaaS dashboard. We invest where
                 technology changes what happens in the real world.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
@@ -106,7 +106,7 @@ export default function Home() {
       <SectionShell
         eyebrow="Portfolio preview"
         title="A portfolio shaped around real-world constraints."
-        intro="These concept cards show the type of companies the first ARC portfolio is designed to attract."
+        intro="A first group of portfolio companies is preparing to launch across real assets, retail operations, health data, and rental infrastructure."
       >
         <div className="grid gap-4 md:grid-cols-2">
           {portfolioCompanies.slice(0, 4).map((company) => (
@@ -116,12 +116,28 @@ export default function Home() {
                   <p className="eyebrow">{company.sector}</p>
                   <h3 className="mt-5 text-4xl font-semibold tracking-[0px]">{company.name}</h3>
                 </div>
-                <PortfolioLogo name={company.name} />
+                <PortfolioLogo name={company.name} src={company.logoSrc} />
               </div>
               <p className="mt-2 font-mono text-xs uppercase tracking-[0.16em] text-secondary">
                 {company.stage}
               </p>
               <p className="mt-6 text-sm leading-6 text-white/64">{company.description}</p>
+              {company.websiteUrl ? (
+                <a
+                  href={company.websiteUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group mt-6 flex w-full items-center justify-between bg-secondary px-4 py-3 text-xs font-bold uppercase tracking-[0.16em] !text-[#111111] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary hover:shadow-[0_14px_36px_rgb(255_122_89/0.18)]"
+                >
+                  <span>Visit website</span>
+                  <span
+                    aria-hidden="true"
+                    className="text-base leading-none transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  >
+                    ↗
+                  </span>
+                </a>
+              ) : null}
             </ArcCard>
           ))}
         </div>

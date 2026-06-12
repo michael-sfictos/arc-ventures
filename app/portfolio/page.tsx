@@ -6,7 +6,8 @@ import { portfolioCompanies } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Portfolio",
-  description: "The ARC Ventures portfolio focus across energy, health and wellness, real estate, and automation.",
+  description:
+    "The ARC Ventures portfolio across tokenized assets, real estate intelligence, autonomous retail, preventive health, and short-term rental infrastructure.",
 };
 
 export default function PortfolioPage() {
@@ -15,12 +16,12 @@ export default function PortfolioPage() {
       <PageHero
         eyebrow="Portfolio"
         title="Companies for assets, resources, and real-world work."
-        intro="ARC is preparing a focused portfolio around founders who can use intelligence to improve physical systems. Replace these concept cards with live portfolio companies as investments are announced."
+        intro="ARC is building a focused portfolio around founders who use intelligence and automation to improve physical systems."
       >
         <ArcCard tone="green">
-          <p className="text-xs font-bold uppercase tracking-[0.16em] opacity-70">Portfolio status</p>
+          <p className="text-xs font-bold uppercase tracking-[0.16em] opacity-70">Launch pipeline</p>
           <p className="mt-5 text-3xl font-semibold tracking-[0px]">
-            Placeholder companies today. A clear taxonomy for the first fund tomorrow.
+            Five portfolio companies are preparing for Q3 and Q4 2026 launches.
           </p>
         </ArcCard>
       </PageHero>
@@ -36,12 +37,28 @@ export default function PortfolioPage() {
                     {company.name}
                   </h2>
                 </div>
-                <PortfolioLogo name={company.name} />
+                <PortfolioLogo name={company.name} src={company.logoSrc} />
               </div>
               <p className="mt-4 font-mono text-xs uppercase tracking-[0.14em] text-secondary">
                 {company.stage}
               </p>
               <p className="mt-8 max-w-xl text-sm leading-6 text-white/66">{company.description}</p>
+              {company.websiteUrl ? (
+                <a
+                  href={company.websiteUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group mt-8 flex w-full items-center justify-between bg-secondary px-4 py-3 text-xs font-bold uppercase tracking-[0.16em] !text-[#111111] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary hover:shadow-[0_14px_36px_rgb(255_122_89/0.18)]"
+                >
+                  <span>Visit website</span>
+                  <span
+                    aria-hidden="true"
+                    className="text-base leading-none transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  >
+                    ↗
+                  </span>
+                </a>
+              ) : null}
             </ArcCard>
           ))}
         </div>

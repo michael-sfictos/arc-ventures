@@ -3,7 +3,7 @@ export const siteConfig = {
   legalName: "ARC Ventures",
   tagline: "AI, robotics, and automation for the physical economy.",
   description:
-    "A Greek venture fund backing founders who apply intelligence to real-world assets, infrastructure, and scarce resources.",
+    "A Greek venture investor backing founders who apply intelligence to real-world assets, infrastructure, operations and scarce resources.",
   email: "hello@arcventures.gr",
   pitchEmail: "pitch@arcventures.gr",
   location: "Athens, Greece",
@@ -29,15 +29,8 @@ export const focusSectors = [
     title: "Energy",
     kicker: "Resilient energy systems",
     description:
-      "AI-native tools, robotics, and automation for grids, distributed assets, building efficiency, storage, inspection, and resource-aware operations.",
+      "AI-native systems, robotics, and automation for grids, distributed assets, building efficiency, storage, inspection, and resource-aware operations.",
     signals: ["Grid intelligence", "Asset inspection", "Energy automation"],
-  },
-  {
-    title: "Health and Retail",
-    kicker: "Intelligent retail systems",
-    description:
-      "Inventory, supply chains, store operations, demand forecasting, customer experience, autonomous fulfillment, and last-mile delivery.",
-    signals: ["Inventory intelligence", "Autonomous operations", "Customer experience"],
   },
   {
     title: "Real Estate",
@@ -46,13 +39,20 @@ export const focusSectors = [
       "Automation for the built environment: construction productivity, building operations, climate resilience, property intelligence, and physical asset optimization.",
     signals: ["Smart buildings", "Construction robotics", "Asset intelligence"],
   },
+  {
+    title: "Retail",
+    kicker: "Intelligent retail systems",
+    description:
+      "Inventory, supply chains, store operations, demand forecasting, customer experience, autonomous fulfillment, and last-mile delivery.",
+    signals: ["Inventory intelligence", "Autonomous operations", "Customer experience"],
+  },
 ];
 
 export const investmentCriteria = [
   {
     title: "Physical-world leverage",
     description:
-      "The company touches assets, infrastructure, labor, energy, health, land, buildings, machines, or measurable resources.",
+      "The company touches assets, infrastructure, labor, energy, land, buildings, machines, or measurable resources.",
   },
   {
     title: "AI with a job to do",
@@ -60,14 +60,14 @@ export const investmentCriteria = [
       "Models are part of an operating system, not the product story alone. We look for decisions, actions, savings, safety, or throughput.",
   },
   {
-    title: "Automation advantage",
+    title: "Automation moat",
     description:
-      "Robotics, sensing, workflow control, or closed-loop execution creates a durable advantage over dashboards and services.",
+      "Robotics, sensing, workflow control, or closed-loop execution creates a durable edge over dashboards and services.",
   },
   {
     title: "Greek edge, global market",
     description:
-      "Founders can build from Greece or with Greek talent while selling into large international markets with urgent physical constraints.",
+      "Built from Greece or with Greek talent, sold into large markets with urgent physical constraints.",
   },
 ];
 
@@ -99,34 +99,54 @@ export const investmentModel = [
   },
 ];
 
-export const portfolioCompanies = [
+export type PortfolioCompany = {
+  name: string;
+  sector: string;
+  stage: string;
+  description: string;
+  logoSrc?: string;
+  websiteUrl?: string;
+};
+
+export const portfolioCompanies: PortfolioCompany[] = [
   {
-    name: "HelioGrid",
-    sector: "Energy",
-    stage: "Concept portfolio",
+    name: "Fractual",
+    sector: "Tokenised real-world assets",
+    stage: "Launching Q3 2026",
+    logoSrc: "/portfolio/FractualAppIcon.svg",
+    websiteUrl: "https://www.fractual.com/en",
     description:
-      "Autonomous inspection and optimization for distributed solar, storage, and grid-edge assets.",
+      "An investment platform for tokenised real-world assets, built to make asset-backed opportunities easier to access and manage.",
   },
   {
-    name: "Kinesis Health",
-    sector: "Health & Wellness",
-    stage: "Concept portfolio",
+    name: "Investimate",
+    sector: "Real estate intelligence",
+    stage: "Launching Q3 2026",
+    logoSrc: "/portfolio/InvestimateAppIcon.svg",
+    websiteUrl: "https://www.investimate.com/en",
     description:
-      "Computer vision and robotics-assisted rehabilitation for clinics and wellness operators.",
+      "A business intelligence tool for real estate assets, helping owners understand performance, risk, and investment decisions.",
   },
   {
-    name: "AtlasBuilt",
-    sector: "Real Estate",
-    stage: "Concept portfolio",
+    name: "Laundrosmart",
+    sector: "Autonomous retail operations",
+    stage: "Launching Q4 2026",
     description:
-      "AI field operations for construction progress, building performance, and asset maintenance.",
+      "Autonomous laundromats with last-mile delivery, designed for faster neighborhood laundry operations and better customer convenience.",
   },
   {
-    name: "FoundryOS",
-    sector: "Industrial Automation",
-    stage: "Concept portfolio",
+    name: "Aeon Labs",
+    sector: "Preventive health intelligence",
+    stage: "Launching Q4 2026",
     description:
-      "Closed-loop automation software for small factories modernizing physical production workflows.",
+      "A holistic blood testing service that tracks more than 90 biomarkers and delivers fast results directly to your phone.",
+  },
+  {
+    name: "Travelspoil",
+    sector: "Short-term rental concierge",
+    stage: "Launching Q4 2026",
+    description:
+      "A smart concierge service for the short-term rental market, improving guest support, local discovery, and operator workflows.",
   },
 ];
 
@@ -182,7 +202,7 @@ export const teamMembers = [
 
 export const founderSignals = [
   "You are building hardware-enabled or asset-connected automation.",
-  "Your customer owns expensive equipment, buildings, energy assets, or care operations.",
-  "Your product can prove savings, uptime, throughput, safety, or health outcomes.",
+  "Your customer owns expensive physical assets: equipment, buildings, or energy infrastructure.",
+  "You have a paying pilot or a customer who's asked for one.",
   "You want a Greek base or Greek technical edge while selling globally.",
 ];

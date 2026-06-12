@@ -102,7 +102,7 @@ export default function TeamPage() {
         <div className="mx-auto max-w-7xl bg-[#5B635A] p-8 sm:p-12">
           <p className="eyebrow">Advisor network</p>
           <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_1fr]">
-            <h2 className="section-heading text-balance">Industrial, clinical, property, and energy operators.</h2>
+            <h2 className="section-heading text-balance">Industrial, property, and energy operators.</h2>
             <p className="text-base leading-7 text-white/72">
               ARC should surround founders with people who have bought, deployed, regulated, financed,
               and scaled physical systems. This section can become a named advisor roster as the fund
