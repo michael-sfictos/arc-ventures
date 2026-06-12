@@ -76,7 +76,7 @@ function getInitials(name: string) {
 
 export function PortfolioLogo({ name, src, className = "" }: PortfolioLogoProps) {
   const [logoFailed, setLogoFailed] = useState(false);
-  const shouldUseUploadedLogo = Boolean(src) && !logoFailed;
+  const logoSrc = src && !logoFailed ? src : null;
 
   return (
     <div
@@ -84,14 +84,14 @@ export function PortfolioLogo({ name, src, className = "" }: PortfolioLogoProps)
       role="img"
       aria-label={`${name} logo`}
     >
-      {shouldUseUploadedLogo ? (
+      {logoSrc ? (
         <Image
-          src={src}
+          src={logoSrc}
           alt=""
           width={64}
           height={64}
           className="size-16 object-contain"
-          unoptimized={src.endsWith(".svg")}
+          unoptimized={logoSrc.endsWith(".svg")}
           onError={() => setLogoFailed(true)}
         />
       ) : (
