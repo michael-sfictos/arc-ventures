@@ -10,7 +10,7 @@ type PortfolioLogoProps = {
 };
 
 const logoArtwork: Record<string, ReactNode> = {
-  Laundrosmart: (
+  "Retail Infrastructure": (
     <svg className="h-9 w-9" viewBox="0 0 48 48" aria-hidden="true">
       <path
         d="M13 12h22a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H13a4 4 0 0 1-4-4V16a4 4 0 0 1 4-4Z"
@@ -29,7 +29,7 @@ const logoArtwork: Record<string, ReactNode> = {
       <path d="M34 32h6l3 3M40 32l3-3" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" />
     </svg>
   ),
-  "Aeon Labs": (
+  "Health Intelligence": (
     <svg className="h-9 w-9" viewBox="0 0 48 48" aria-hidden="true">
       <path
         d="M18 8h12M21 8v11L13 34a6 6 0 0 0 5.3 8h11.4A6 6 0 0 0 35 34l-8-15V8"
@@ -44,7 +44,7 @@ const logoArtwork: Record<string, ReactNode> = {
       <circle cx="28" cy="29" r="2" fill="currentColor" />
     </svg>
   ),
-  Travelspoil: (
+  "Hospitality Systems": (
     <svg className="h-9 w-9" viewBox="0 0 48 48" aria-hidden="true">
       <path
         d="M8 23 24 11l16 12v17H8V23Z"

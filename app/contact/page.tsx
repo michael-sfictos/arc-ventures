@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ArcCard } from "@/components/arc-card";
 import { PageHero } from "@/components/page-hero";
+import { PitchFormModal } from "@/components/pitch-form-modal";
 import { SectionShell } from "@/components/section-shell";
 import { founderSignals, siteConfig } from "@/lib/content";
 
@@ -10,7 +11,6 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  const pitchSubject = encodeURIComponent("ARC Ventures pitch");
   const generalSubject = encodeURIComponent("ARC Ventures introduction");
 
   return (
@@ -22,12 +22,8 @@ export default function ContactPage() {
       >
         <ArcCard tone="green">
           <p className="text-xs font-bold uppercase tracking-[0.16em] opacity-70">Pitch ARC</p>
-          <a
-            href={`mailto:${siteConfig.pitchEmail}?subject=${pitchSubject}`}
-            className="mt-5 block text-3xl font-semibold tracking-[0px] underline decoration-current/30 underline-offset-8 transition-colors hover:text-secondary"
-          >
-            {siteConfig.pitchEmail}
-          </a>
+          <p className="mt-5 text-3xl font-semibold tracking-[0px]">Submit a deck for review.</p>
+          <PitchFormModal />
         </ArcCard>
       </PageHero>
 
@@ -63,8 +59,8 @@ export default function ContactPage() {
               Interested in Greek deep tech and physical-world automation?
             </h2>
             <p className="mt-6 text-sm leading-6 text-white/66">
-              Use the general email for LP, co-investor, corporate, or advisor introductions. The
-              first version uses email links only; a secure pitch form can be added later.
+              Use the general email for LP, co-investor, corporate, or advisor introductions.
+              Founders can use the pitch form to share a deck and company context.
             </p>
           </ArcCard>
         </div>

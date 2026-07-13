@@ -15,8 +15,8 @@ export default function TeamPage() {
     <>
       <PageHero
         eyebrow="Team"
-        title="A lean fund for technical founders."
-        intro="ARC is designed around focused investing, operator context, and a specialist advisor network across energy, health, real estate, and automation."
+        title="A lean venture investor for technical founders."
+        intro="ARC is designed around focused investing, operator context, and domain depth across energy, real estate, retail, and automation."
       >
         <ArcCard tone="orange">
           <p className="text-xs font-bold uppercase tracking-[0.16em] opacity-70">Team structure</p>
@@ -98,19 +98,6 @@ export default function TeamPage() {
         </div>
       </SectionShell>
 
-      <section className="border-t border-white/10 px-4 py-16 sm:px-8 lg:py-24">
-        <div className="mx-auto max-w-7xl bg-[#5B635A] p-8 sm:p-12">
-          <p className="eyebrow">Advisor network</p>
-          <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_1fr]">
-            <h2 className="section-heading text-balance">Industrial, property, and energy operators.</h2>
-            <p className="text-base leading-7 text-white/72">
-              ARC should surround founders with people who have bought, deployed, regulated, financed,
-              and scaled physical systems. This section can become a named advisor roster as the fund
-              develops.
-            </p>
-          </div>
-        </div>
-      </section>
     </>
   );
 }

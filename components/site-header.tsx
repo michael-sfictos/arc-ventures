@@ -12,7 +12,7 @@ export function SiteHeader() {
           <span className="text-sm font-semibold uppercase tracking-[0.22em]">{siteConfig.name}</span>
         </Link>
         <nav className="hidden items-center gap-1 md:flex" aria-label="Main navigation">
-          {navItems.map((item) => (
+          {navItems.filter((item) => !item.hidden).map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -30,7 +30,7 @@ export function SiteHeader() {
         </Link>
       </div>
       <nav className="mx-auto flex max-w-7xl gap-1 overflow-x-auto border-t border-white/10 py-2 md:hidden" aria-label="Mobile navigation">
-        {navItems.map((item) => (
+        {navItems.filter((item) => !item.hidden).map((item) => (
           <Link
             key={item.href}
             href={item.href}

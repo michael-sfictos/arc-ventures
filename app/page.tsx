@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArcCard } from "@/components/arc-card";
 import { OrbitalBackground } from "@/components/orbital-background";
+import { PitchFormModal } from "@/components/pitch-form-modal";
 import { PortfolioLogo } from "@/components/portfolio-logo";
 import { SectionShell } from "@/components/section-shell";
 import {
@@ -147,18 +148,13 @@ export default function Home() {
         <div className="mx-auto max-w-7xl bg-primary p-8 text-[#111111] sm:p-12 lg:p-16">
           <p className="text-xs font-bold uppercase tracking-[0.18em] opacity-70">For founders</p>
           <div className="mt-6 grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
-            <h2 className="section-heading max-w-4xl">Building with atoms, care, energy, or buildings?</h2>
+            <h2 className="section-heading max-w-4xl">Building with data, real-world assets, tokens, or energy?</h2>
             <div>
               <p className="text-base leading-7 opacity-78">
                 Send us the problem, the system you are changing, and the first proof that customers
                 need it now.
               </p>
-              <Link
-                href="/contact"
-                className="mt-8 inline-flex bg-[#111111] px-4 py-3 text-xs font-bold uppercase tracking-[0.16em] !text-white transition-colors hover:bg-secondary hover:!text-[#111111]"
-              >
-                Start a conversation
-              </Link>
+              <PitchFormModal />
             </div>
           </div>
         </div>

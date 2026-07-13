@@ -13,7 +13,7 @@ export const navItems = [
   { href: "/", label: "Home" },
   { href: "/investment", label: "Investment" },
   { href: "/portfolio", label: "Portfolio" },
-  { href: "/team", label: "Team" },
+  { href: "/team", label: "Team", hidden: true },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -128,21 +128,21 @@ export const portfolioCompanies: PortfolioCompany[] = [
       "A business intelligence tool for real estate assets, helping owners understand performance, risk, and investment decisions.",
   },
   {
-    name: "Laundrosmart",
+    name: "Retail Infrastructure",
     sector: "Autonomous retail operations",
     stage: "Launching Q4 2026",
     description:
       "Autonomous laundromats with last-mile delivery, designed for faster neighborhood laundry operations and better customer convenience.",
   },
   {
-    name: "Aeon Labs",
+    name: "Health Intelligence",
     sector: "Preventive health intelligence",
     stage: "Launching Q4 2026",
     description:
       "A holistic blood testing service that tracks more than 90 biomarkers and delivers fast results directly to your phone.",
   },
   {
-    name: "Travelspoil",
+    name: "Hospitality Systems",
     sector: "Short-term rental concierge",
     stage: "Launching Q4 2026",
     description:
