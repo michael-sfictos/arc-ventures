@@ -12,6 +12,7 @@ export function PitchFormModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [status, setStatus] = useState<FormStatus>("idle");
   const [message, setMessage] = useState("");
+  const [phone, setPhone] = useState("");
   const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
@@ -88,6 +89,7 @@ export function PitchFormModal() {
 
       setStatus("success");
       setMessage("Pitch received. We will review it and come back if there is a fit.");
+      setPhone("");
       form.reset();
     } catch (error) {
       setStatus("error");
@@ -103,6 +105,7 @@ export function PitchFormModal() {
           setIsOpen(true);
           setStatus("idle");
           setMessage("");
+          setPhone("");
         }}
         className="mt-8 inline-flex bg-[#111111] px-4 py-3 text-xs font-bold uppercase tracking-[0.16em] !text-white transition-colors hover:bg-secondary hover:!text-[#111111]"
       >
@@ -166,7 +169,12 @@ export function PitchFormModal() {
                   <input
                     name="phone"
                     type="tel"
-                    placeholder="+30 69X XXX XXXX"
+                    inputMode="numeric"
+                    autoComplete="tel"
+                    pattern="[0-9]*"
+                    placeholder="3069XXXXXXXX"
+                    value={phone}
+                    onChange={(event) => setPhone(event.target.value.replace(/\D/g, ""))}
                     className="border border-white/12 bg-black/24 px-3 py-3 text-sm font-normal normal-case tracking-normal text-white outline-none transition-colors placeholder:text-white/28 focus:border-primary"
                   />
                 </label>
