@@ -24,6 +24,15 @@ function isEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
+function parseRecipients(value: string | undefined) {
+  const recipients = (value || siteConfig.pitchEmail)
+    .split(",")
+    .map((email) => email.trim())
+    .filter(Boolean);
+
+  return recipients.filter(isEmail);
+}
+
 function submissionText(payload: Required<Pick<PitchPayload, "name" | "email" | "company" | "focus" | "stage" | "problem" | "deckUrl">> & PitchPayload) {
   return [
     "New ARC Ventures pitch submission",
@@ -77,8 +86,13 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Pitch form email is not configured yet." }, { status: 503 });
     }
 
-    const to = process.env.PITCH_FORM_TO_EMAIL || siteConfig.pitchEmail;
+    const to = parseRecipients(process.env.PITCH_FORM_TO_EMAIL);
     const from = process.env.PITCH_FORM_FROM_EMAIL || "ARC Ventures <onboarding@resend.dev>";
+
+    if (to.length === 0) {
+      console.error("No valid PITCH_FORM_TO_EMAIL recipients configured.");
+      return NextResponse.json({ error: "Pitch form email is not configured yet." }, { status: 503 });
+    }
 
     const emailResponse = await fetch("https://api.resend.com/emails", {
       method: "POST",
