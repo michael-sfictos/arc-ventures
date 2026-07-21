@@ -50,7 +50,14 @@ export function PitchFormModal() {
     }
 
     try {
-      const blob = await upload(deck.name, deck, {
+      const rawWebsite = String(formData.get("website") || "").trim();
+      const website = rawWebsite
+        ? rawWebsite.match(/^https?:\/\//i)
+          ? rawWebsite
+          : `https://${rawWebsite.replace(/^\/+/, "")}`
+        : "";
+
+      const blob = await upload(`pitch-decks/${crypto.randomUUID()}-${deck.name}`, deck, {
         access: "public",
         handleUploadUrl: "/api/pitch-deck/upload",
         clientPayload: JSON.stringify({ filename: deck.name }),
@@ -64,7 +71,7 @@ export function PitchFormModal() {
           email: formData.get("email"),
           phone: formData.get("phone"),
           company: formData.get("company"),
-          website: formData.get("website"),
+          website,
           focus: formData.get("focus"),
           stage: formData.get("stage"),
           problem: formData.get("problem"),
@@ -159,7 +166,8 @@ export function PitchFormModal() {
                   <input
                     name="phone"
                     type="tel"
-                    className="border border-white/12 bg-black/24 px-3 py-3 text-sm font-normal normal-case tracking-normal text-white outline-none transition-colors focus:border-primary"
+                    placeholder="+30 69X XXX XXXX"
+                    className="border border-white/12 bg-black/24 px-3 py-3 text-sm font-normal normal-case tracking-normal text-white outline-none transition-colors placeholder:text-white/28 focus:border-primary"
                   />
                 </label>
                 <label className="grid gap-2 text-xs font-bold uppercase tracking-[0.14em] text-white/58">
@@ -174,12 +182,18 @@ export function PitchFormModal() {
 
               <label className="grid gap-2 text-xs font-bold uppercase tracking-[0.14em] text-white/58">
                 Website
-                <input
-                  name="website"
-                  type="url"
-                  placeholder="https://"
-                  className="border border-white/12 bg-black/24 px-3 py-3 text-sm font-normal normal-case tracking-normal text-white outline-none transition-colors placeholder:text-white/28 focus:border-primary"
-                />
+                <div className="flex border border-white/12 bg-black/24 transition-colors focus-within:border-primary">
+                  <span className="flex shrink-0 items-center border-r border-white/12 px-3 text-sm font-normal normal-case tracking-normal text-white/45">
+                    https://
+                  </span>
+                  <input
+                    name="website"
+                    type="text"
+                    inputMode="url"
+                    placeholder="company.com"
+                    className="min-w-0 flex-1 bg-transparent px-3 py-3 text-sm font-normal normal-case tracking-normal text-white outline-none placeholder:text-white/28"
+                  />
+                </div>
               </label>
 
               <div className="grid gap-4 sm:grid-cols-2">

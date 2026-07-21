@@ -22,18 +22,12 @@ export async function POST(request: Request) {
         return {
           allowedContentTypes: ALLOWED_DECK_TYPES,
           maximumSizeInBytes: MAX_DECK_SIZE,
-          pathname: `pitch-decks/${crypto.randomUUID()}-${filename}`,
+          addRandomSuffix: true,
           tokenPayload: JSON.stringify({
             submittedAt: new Date().toISOString(),
             filename,
           }),
         };
-      },
-      onUploadCompleted: async ({ blob }) => {
-        console.info("Pitch deck uploaded", {
-          url: blob.url,
-          pathname: blob.pathname,
-        });
       },
     });
 
